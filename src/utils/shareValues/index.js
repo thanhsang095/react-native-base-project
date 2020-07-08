@@ -1,6 +1,6 @@
 let store= []
 
-class ShareValues {
+export default class ShareValues {
 
   static setStore(_store) {
     store = _store
@@ -10,5 +10,3 @@ class ShareValues {
 		return store
 	}
 }
-
-export {ShareValues};

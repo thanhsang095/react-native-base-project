@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import { styles } from './style';
 
 
-const MainHomePage = (props) => {
+const Detail = (props) => {
   const { t } = useTranslation()
   const [isLoading, setIsLoading] = useState(false)
 
@@ -14,8 +14,9 @@ const MainHomePage = (props) => {
 
   return (
     <View style={styles.container}>
+      <Text>Detail Screen</Text>
     </View>
   )
 }
 
-export default MainHomePage
+export default Detail
