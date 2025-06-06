@@ -1,31 +1,57 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import HeaderNavigation from '~/components/HeaderNavigation';
-import { appTheme } from '~/utils/Themes/appTheme';
+import {appTheme} from '~/utils/Themes/appTheme';
 import globalStyles from '~/utils/Themes/globalStyles';
 
 const Home = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
   return (
-    <SafeAreaView style={[globalStyles.container, { backgroundColor: appTheme().backgroundColor }]}>
+    <SafeAreaView
+      style={[
+        globalStyles.container,
+        {backgroundColor: appTheme().backgroundColor},
+      ]}>
       <HeaderNavigation
-        onPressFriend={() => alert("Friend")}
-        onPressProfile={() => alert("Profile")}
-        style={{ backgroundColor: appTheme().backgroundColor }}
+        onPressFriend={() => alert('Friend')}
+        onPressProfile={() => alert('Profile')}
+        style={{backgroundColor: appTheme().backgroundColor}}
         iconSize={24}
-        iconColor={appTheme().buttonTextColor} />
+        iconColor={appTheme().buttonTextColor}
+      />
       <View style={globalStyles.containerCenter}>
-        <Text style={[styles.text, { color: appTheme().buttonTextColor }]}>Home</Text>
+        <Text style={[styles.text, {color: appTheme().buttonTextColor}]}>
+          Home
+        </Text>
       </View>
+      <TouchableOpacity
+        style={{height: 100, width: 100, backgroundColor: 'red'}}
+        onPress={() => {
+          props?.navigation?.navigate('Login');
+        }}>
+        <Text>Login</Text>
+      </TouchableOpacity>
+      <TouchableOpacityy
+        style={{height: 100, width: 100, backgroundColor: 'red'}}
+        onPress={() => {
+          props?.navigation?.navigate('Login');
+        }}>
+        <Text>Login</Text>
+      </TouchableOpacityy>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   text: {
     fontSize: 30,
     textAlign: 'center',
-  }
-})
-
+  },
+});
 
 export default Home;
