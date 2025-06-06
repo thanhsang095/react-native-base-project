@@ -10,6 +10,7 @@ import {appTheme} from '~/utils/Themes/appTheme';
 import globalStyles from '~/utils/Themes/globalStyles';
 
 const Home = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <SafeAreaView
       style={[
@@ -35,6 +36,13 @@ const Home = (props) => {
         }}>
         <Text>Login</Text>
       </TouchableOpacity>
+      <TouchableOpacityy
+        style={{height: 100, width: 100, backgroundColor: 'red'}}
+        onPress={() => {
+          props?.navigation?.navigate('Login');
+        }}>
+        <Text>Login</Text>
+      </TouchableOpacityy>
     </SafeAreaView>
   );
 };
